@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Login"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".cancel"
+            android:exported="true" />
+        <activity
             android:name=".Confirm"
             android:exported="true" />
         <activity
