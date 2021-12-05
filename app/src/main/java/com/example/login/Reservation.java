@@ -1,4 +1,5 @@
 package com.example.login;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
@@ -11,15 +12,15 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class Reservation extends AppCompatActivity {
-        boolean flag;
-        SharedPreferences spref;
-        SharedPreferences.Editor editor;
-        Button seat1;
-        Button seat2;
-        Button seat3;
-        Button seat4;
-        Button seat5;
-        Button seat6;
+    boolean flag;
+    SharedPreferences spref;
+    SharedPreferences.Editor editor;
+    Button seat1;
+    Button seat2;
+    Button seat3;
+    Button seat4;
+    Button seat5;
+    Button seat6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,34 +32,34 @@ public class Reservation extends AppCompatActivity {
 
     public void onClickHandler1(View view){
 
-       AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("선택").setMessage("예약하시겠습니까?");
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    seat1 = findViewById(R.id.seat1);
-                    spref = getSharedPreferences("gref",MODE_PRIVATE);
-                    editor = spref.edit();
-                    if(spref.getBoolean("number",false) == true){
-                        //seat1.setBackgroundColor(Color.DKGRAY);
-                        Toast.makeText(getApplicationContext(),"이미 예약된 자리입니다.",Toast.LENGTH_LONG ).show();
-                    }
-                    else{
-                        editor.putBoolean("number", true);
-                        editor.commit();
-                        Intent intent = new Intent(getApplicationContext(), Payment.class);
-                        intent.putExtra("number", 1);
-                        startActivity(intent);
-                    }
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("선택").setMessage("예약하시겠습니까?");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                seat1 = findViewById(R.id.seat1);
+                spref = getSharedPreferences("gref",MODE_PRIVATE);
+                editor = spref.edit();
+                if(spref.getBoolean("number",false) == true){
+                    //seat1.setBackgroundColor(Color.DKGRAY);
+                    Toast.makeText(getApplicationContext(),"이미 예약된 자리입니다.",Toast.LENGTH_LONG ).show();
                 }
-            });
-            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int id) {
+                else{
+                    editor.putBoolean("number", true);
+                    editor.commit();
+                    Intent intent = new Intent(getApplicationContext(), Payment.class);
+                    intent.putExtra("number", 1);
+                    startActivity(intent);
                 }
-            });
-            AlertDialog alertDialog = builder.create();
-            alertDialog.show();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
 
     }
 
