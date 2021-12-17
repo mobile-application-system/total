@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
+
+import java.net.URI;
 
 public class Payment extends AppCompatActivity {
 
@@ -111,49 +114,16 @@ public class Payment extends AppCompatActivity {
 
     }
     public void show1(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("전자금융거래 이용약관");
-        //타이틀설정
-        String tv_text = "약관내용 ~~";
-        builder.setMessage(tv_text);
-        //내용설정
-        builder.setPositiveButton("확인",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-
-        builder.show();
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.inicis.com/terms"));
+        startActivity(intent);
     }
     public void show2(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("개인정보수집 및 이용안내");
-        //타이틀설정
-        String tv_text = "약관내용 ~~";
-        builder.setMessage(tv_text);
-        //내용설정
-        builder.setPositiveButton("확인",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-
-        builder.show();
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.inicis.com/privacy"));
+        startActivity(intent);
     }
     public void show3(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("개인정보제공 및 위탁안내");
-        //타이틀설정
-        String tv_text = "약관내용 ~~";
-        builder.setMessage(tv_text);
-        //내용설정
-        builder.setPositiveButton("확인",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-
-        builder.show();
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.inicis.com/privacy"));
+        startActivity(intent);
     }
 
 }

@@ -17,7 +17,6 @@ public class Reservation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation);
         Intent intent = getIntent();
-
     }
     public void onClickHandler(View view){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
