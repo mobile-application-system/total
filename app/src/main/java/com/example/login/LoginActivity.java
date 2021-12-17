@@ -29,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         et_pw = findViewById(R.id.et_pw);
         btn_login = findViewById(R.id.btn_login);
         btn_register = findViewById(R.id.btn_register);
+        //Button btn = (Button)findViewById(R.id.button);
 
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
