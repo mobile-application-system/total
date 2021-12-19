@@ -35,7 +35,7 @@ public class HomeActivity extends Activity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                Intent intent = new Intent(HomeActivity.this, cancel.class);
                 intent.putExtra("userID",userID);
                 startActivity(intent);
 

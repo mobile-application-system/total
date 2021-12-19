@@ -16,7 +16,7 @@ public class cancel extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cancel);
+        setContentView(R.layout.activity_main);
         Intent intent = getIntent();
 
         Button btn = (Button)findViewById(R.id.cancel);
@@ -28,10 +28,10 @@ public class cancel extends AppCompatActivity {
                 if(spref.getBoolean("number",false) == true){
                     editor.putBoolean("number", false);
                     editor.commit();
-                    Toast.makeText(getApplicationContext(),"취소 완료",Toast.LENGTH_LONG ).show();
+                    Toast.makeText(getApplicationContext(),"1번 취소 완료",Toast.LENGTH_LONG ).show();
                 }
                 else{
-                    Toast.makeText(getApplicationContext(),"취소할 게 없어요",Toast.LENGTH_LONG ).show();
+                    Toast.makeText(getApplicationContext(),"취소할 좌석이 없습니다.",Toast.LENGTH_LONG ).show();
 
                 }
             }
